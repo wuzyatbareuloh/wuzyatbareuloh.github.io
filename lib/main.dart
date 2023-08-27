@@ -25,16 +25,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const MyHomePage(title: 'Bareuloh Sounds Homepage'),
-        '/artists': (context) => const ArtistsPage(title: 'artists'),
-        '/wuzy': (context) => const WuzyPage(title: 'wuzy'),
-        '/cloudsinseoul': (context) =>
-            const CloudsInSeoulPage(title: 'clouds in seoul'),
-        '/patient': (context) => const PatientPage(title: 'patient'),
-        '/bloominglate': (context) =>
-            const BloomingLatePage(title: 'bloominglate'),
+      //initialRoute: '/',
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) {
+            if (_currentPath == '/') {
+              return const MyHomePage(title: 'Bareuloh Sounds Homepage');
+            } else if (_currentPath == '/artists') {
+              return const ArtistsPage(title: 'artists');
+            } else if (_currentPath == '/wuzy') {
+              return const WuzyPage(title: 'wuzy');
+            } else if (_currentPath == '/cloudsinseoul') {
+              return const CloudsInSeoulPage(title: 'clouds in seoul');
+            } else if (_currentPath == '/patient') {
+              return const PatientPage(title: 'patient');
+            } else if (_currentPath == '/bloominglate') {
+              return const BloomingLatePage(title: 'bloominglate');
+            }
+            // You can return a default page or show an error page
+            return const Text('Page not found');
+          },
+        );
       },
     );
   }
