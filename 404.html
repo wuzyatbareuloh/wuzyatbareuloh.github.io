@@ -17,8 +17,9 @@
 
     // Check if the current path is in the mapping
     if (routeMapping[path]) {
-      // Redirect to the corresponding Flutter route
-      window.location.replace(routeMapping[path]);
+      // Launch the Flutter app with the specified route
+      var url = routeMapping[path];
+      window.location.replace('/' + url);
     } else {
       // Redirect to the root route if the path is not found
       window.location.replace('/');
