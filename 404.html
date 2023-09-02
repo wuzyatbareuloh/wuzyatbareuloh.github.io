@@ -11,7 +11,7 @@
 
     // Define a mapping of paths to their corresponding Flutter routes
     var routeMapping = {
-      'https://www.bareulohsounds.com/patient': '/patient',
+      '/patient': '/patient',
       // Add more mappings for other routes as needed
     };
 
@@ -19,7 +19,7 @@
     if (routeMapping[path]) {
       // Launch the Flutter app with the specified route
       var url = routeMapping[path];
-      window.location.replace('/' + url);
+      window.location.replace(url);
     } else {
       // Redirect to the root route if the path is not found
       window.location.replace('/');
