@@ -6,7 +6,23 @@
 </head>
 <body>
   <script>
-    window.location.replace('/');
+    // Get the current URL path
+    var path = window.location.pathname;
+
+    // Define a mapping of paths to their corresponding Flutter routes
+    var routeMapping = {
+      '/patient': '/patient',
+      // Add more mappings for other routes as needed
+    };
+
+    // Check if the current path is in the mapping
+    if (routeMapping[path]) {
+      // Redirect to the corresponding Flutter route
+      window.location.replace(routeMapping[path]);
+    } else {
+      // Redirect to the root route if the path is not found
+      window.location.replace('/');
+    }
   </script>
 </body>
 </html>
