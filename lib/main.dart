@@ -18,6 +18,7 @@ void main() {
 }
 
 final GoRouter _router = GoRouter(
+  initialLocation: '/',
   routes: <RouteBase>[
     GoRoute(
       path: '/',
