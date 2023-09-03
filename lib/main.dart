@@ -14,7 +14,7 @@ import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const MyApp());
-  setUrlStrategy(const PathUrlStrategy());
+  setUrlStrategy(PathUrlStrategy());
 }
 
 final GoRouter _router = GoRouter(
