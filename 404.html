@@ -84,8 +84,11 @@
     document.title = pageTitle;
   }
 
-  // Update title on page load
-  window.addEventListener('load', updateTitle);
+  // Set the initial title
+  updateTitle();
+
+  // Update title after the page content has loaded
+  window.addEventListener('DOMContentLoaded', updateTitle);
 
   // Update title when the URL changes (e.g., when navigating with browser back/forward buttons)
   window.addEventListener('popstate', updateTitle);
