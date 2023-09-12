@@ -64,8 +64,6 @@
       case '/wuzy':
         pageTitle = 'Wuzy';
         break;
-
-      // Add more cases for other pages as needed
       case '/cloudsinseoul':
         pageTitle = 'Clouds in Seoul';
         break;
@@ -82,6 +80,9 @@
 
     // Update the document title
     document.title = pageTitle;
+
+    // Use pushState to update the URL without a page refresh
+    history.pushState({ title: pageTitle }, pageTitle, path);
   }
 
   // Set the initial title
@@ -89,10 +90,8 @@
 
   // Update title after the page content has loaded
   window.addEventListener('DOMContentLoaded', updateTitle);
-
-  // Update title when the URL changes (e.g., when navigating with browser back/forward buttons)
-  window.addEventListener('popstate', updateTitle);
 </script>
+
 
 </head>
 
