@@ -51,46 +51,9 @@
 
 
   <script>
-  // Function to update the title based on the current URL
-  function updateTitle() {
-    var path = window.location.pathname; // Get the current path
-    var pageTitle;
-
-    // Define custom titles for specific pages
-    switch (path) {
-      case '/artists':
-        pageTitle = 'Artists @ Bareulohsounds.';
-        break;
-      case '/wuzy':
-        pageTitle = 'Wuzy';
-        break;
-      case '/cloudsinseoul':
-        pageTitle = 'Clouds in Seoul';
-        break;
-      case '/patient':
-        pageTitle = 'Wuzy - Patient';
-        break;
-      case '/bloominglate':
-        pageTitle = 'Wuzy - Blooming Late (ft. Sean Park)';
-        break;
-      default:
-        pageTitle = 'Bareulohsounds. Here, is where you belong.'; // Default title
-        break;
-    }
-
-    // Update the document title
-    document.title = pageTitle;
-
-    // Use pushState to update the URL without a page refresh
-    history.pushState({ title: pageTitle }, pageTitle, path);
-  }
-
   // Set the initial title
-  updateTitle();
-
-  // Update title after the page content has loaded
-  window.addEventListener('DOMContentLoaded', updateTitle);
-</script>
+  document.title = 'Bareulohsounds. Here, is where you belong.';
+  </script>
 
 
 </head>
