@@ -19,7 +19,6 @@
 
 
   <base href="/">
-
   <meta property="og:title" content="Bareulohsounds.">
   <meta property="og:description" content="Here, is where you belong">
   <meta property="og:image" content="bareuloh_website_preview.png">
@@ -44,26 +43,47 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '4222879298';
+    var serviceWorkerVersion = '3565760575';
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 
 
   <script>
-  // Set the initial title
-    document.title = 'Bareulohsounds. Here, is where you belong.';
+    // This script updates the title based on the current page
+    window.addEventListener('load', function() {
+      var path = window.location.pathname; // Get the current path
+      var pageTitle;
+
+      // Define custom titles for specific pages
+      switch (path) {
+        case '/artists':
+          pageTitle = 'Artists @ Bareulohsounds.';
+          break;
+        case '/wuzy':
+          pageTitle = 'Wuzy';
+          break;
+          
+        // Add more cases for other pages as needed
+        case '/cloudsinseoul':
+          pageTitle = 'Clouds in Seoul';
+          break;
+        case '/patient':
+          pageTitle = 'Wuzy - Patient';
+          break;
+        case '/bloominglate':
+          pageTitle = 'Wuzy - Blooming Late (ft. Sean Park)';
+          break;
+        default:
+          pageTitle = 'Bareulohsounds. Here, is where you belong.'; // Default title
+          break;
+      }
+
+      // Update the document title
+      document.title = pageTitle;
+    });
   </script>
-
-
 </head>
-
-
-
-
-
-
-
 <body>
   <script>
     window.addEventListener('load', function(ev) {

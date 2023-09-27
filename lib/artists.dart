@@ -138,7 +138,7 @@ class _ArtistsPageState extends State<ArtistsPage>
                           406,
                       child: Opacity(
                         opacity: 0.0,
-                        child: Image.asset('we1_5xpurple.png'),
+                        child: Image.asset('artists1_5x.png'),
                       ),
                     ),
                   ),

@@ -20,6 +20,8 @@ import './nonMainPageFooter.dart';
 
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_animate/flutter_animate.dart';
+
 //import 'dart:ui' as ui;
 
 class CloudsInSeoulPage extends StatefulWidget {
@@ -198,144 +200,167 @@ class _CloudsInSeoulPageState extends State<CloudsInSeoulPage>
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const SizedBox(height: 45.0),
-                        SizedBox(
-                          width: ((MediaQuery.of(context).size.width * (0.7))
-                              .clamp(10, 220)),
-                          child: Image.asset('assets/cloudsInSeoulTempPic.png'),
-                        ),
-                        const SizedBox(height: 10.0),
-                        const Text(
-                          'Clouds in Seoul',
-                          style: TextStyle(
-                            fontFamily: 'Thonburi-Bold',
-                            fontSize: 29,
-                            color: Color(0xffFFFFFF),
-                            //fontWeight: FontWeight.bold,
+                        Animate(
+                          effects: const [
+                            FadeEffect(duration: Duration(seconds: 3)),
+                          ],
+                          child: SizedBox(
+                            width: ((MediaQuery.of(context).size.width * (0.7))
+                                .clamp(10, 220)),
+                            child:
+                                Image.asset('assets/cloudsInSeoulTempPic.png'),
                           ),
                         ),
                         const SizedBox(height: 10.0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () async {
-                                  Uri _url = Uri.parse(
-                                      'https://open.spotify.com/artist/1NvogHULhzbI6YCvzIiKEl?si=4UXBUNtFTpWBi60dqNHj9g');
-                                  if (!(await launchUrl(_url))) {
-                                    throw 'Could not launch $_url';
-                                  }
-                                },
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                child: SizedBox(
-                                  height: 23,
-                                  child: Image.asset('assets/spotify.png'),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12.0),
-                            Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () async {
-                                  Uri _url = Uri.parse(
-                                      'https://music.apple.com/us/artist/clouds-in-seoul/1702506631');
-                                  if (!(await launchUrl(_url))) {
-                                    throw 'Could not launch $_url';
-                                  }
-                                },
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                child: SizedBox(
-                                  height: 23,
-                                  child: Image.asset('assets/applemusic.png'),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12.0),
-                            Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () async {
-                                  Uri _url = Uri.parse(
-                                      'https://www.instagram.com/clouds_in_seoul');
-                                  if (!(await launchUrl(_url))) {
-                                    throw 'Could not launch $_url';
-                                  }
-                                },
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                child: SizedBox(
-                                  height: 23,
-                                  child: Image.asset('assets/instagram.png'),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 12.0),
-                            Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () async {
-                                  Uri _url = Uri.parse(
-                                      'https://www.youtube.com/channel/UC7hjh0KxAkRKYJIIz1_QsOg');
-                                  if (!(await launchUrl(_url))) {
-                                    throw 'Could not launch $_url';
-                                  }
-                                },
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                child: SizedBox(
-                                  height: 23,
-                                  child: Image.asset('assets/youtube.png'),
-                                ),
-                              ),
-                            ),
+                        Animate(
+                          effects: const [
+                            FadeEffect(duration: Duration(seconds: 4)),
                           ],
+                          child: const Text(
+                            'Clouds in Seoul',
+                            style: TextStyle(
+                              fontFamily: 'Thonburi-Bold',
+                              fontSize: 29,
+                              color: Color(0xffFFFFFF),
+                              //fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        const SizedBox(height: 30.0),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[500]!.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(
-                                10), // Adjust the radius for the desired roundness
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey[500]!.withOpacity(0.1),
-                                blurRadius: 5,
-                                spreadRadius: 4,
+                        const SizedBox(height: 10.0),
+                        Animate(
+                          effects: const [
+                            FadeEffect(duration: Duration(seconds: 5)),
+                          ],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () async {
+                                    Uri _url = Uri.parse(
+                                        'https://open.spotify.com/artist/1NvogHULhzbI6YCvzIiKEl?si=4UXBUNtFTpWBi60dqNHj9g');
+                                    if (!(await launchUrl(_url))) {
+                                      throw 'Could not launch $_url';
+                                    }
+                                  },
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  child: SizedBox(
+                                    height: 23,
+                                    child: Image.asset('assets/spotify.png'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 12.0),
+                              Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () async {
+                                    Uri _url = Uri.parse(
+                                        'https://music.apple.com/us/artist/clouds-in-seoul/1702506631');
+                                    if (!(await launchUrl(_url))) {
+                                      throw 'Could not launch $_url';
+                                    }
+                                  },
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  child: SizedBox(
+                                    height: 23,
+                                    child: Image.asset('assets/applemusic.png'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 12.0),
+                              Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () async {
+                                    Uri _url = Uri.parse(
+                                        'https://www.instagram.com/clouds_in_seoul');
+                                    if (!(await launchUrl(_url))) {
+                                      throw 'Could not launch $_url';
+                                    }
+                                  },
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  child: SizedBox(
+                                    height: 23,
+                                    child: Image.asset('assets/instagram.png'),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 12.0),
+                              Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () async {
+                                    Uri _url = Uri.parse(
+                                        'https://www.youtube.com/channel/UC7hjh0KxAkRKYJIIz1_QsOg');
+                                    if (!(await launchUrl(_url))) {
+                                      throw 'Could not launch $_url';
+                                    }
+                                  },
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  child: SizedBox(
+                                    height: 23,
+                                    child: Image.asset('assets/youtube.png'),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                10), // Match the borderRadius of the container
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(
-                                  sigmaX: 2,
-                                  sigmaY:
-                                      2), // Adjust the blur values as needed
-                              child: Container(
-                                padding: const EdgeInsets.all(18.0),
-                                child: SizedBox(
-                                  width: (((MediaQuery.of(context).size.width *
-                                              0.7) *
-                                          1.1)
-                                      .clamp(5, 600)),
-                                  child: AnimatedOpacity(
-                                    opacity: _opacity,
-                                    duration: const Duration(milliseconds: 500),
-                                    child: const Text(
-                                      "Clouds in Seoul is a singer-songwriter and cofounder of Bareulohsounds.\n\n\nOther than a few years spent in the UK and on a US military base, he has lived in Seoul his whole life and wants to make music based on the observations he makes. He prefers an approach with as few instruments as possible, and hopes his music provides a personal listening experience.\n\n\nHe's helped co-produce a majority of Wuzy's releases, and is currently working on his debut album \"Warmth\".\n\n\nHis biggest musical influences are the Beatles, Trent Reznor, Rachael Yamagata, and the Lumineers.",
-                                      style: TextStyle(
-                                        fontFamily: 'Thonburi',
-                                        fontSize: 15,
-                                        color: Color(0xffFFFFFF),
+                        ),
+                        const SizedBox(height: 30.0),
+                        Animate(
+                          effects: const [
+                            FadeEffect(duration: Duration(seconds: 5)),
+                          ],
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey[500]!.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(
+                                  10), // Adjust the radius for the desired roundness
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey[500]!.withOpacity(0.1),
+                                  blurRadius: 5,
+                                  spreadRadius: 4,
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                  10), // Match the borderRadius of the container
+                              child: BackdropFilter(
+                                filter: ImageFilter.blur(
+                                    sigmaX: 2,
+                                    sigmaY:
+                                        2), // Adjust the blur values as needed
+                                child: Container(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: SizedBox(
+                                    width:
+                                        (((MediaQuery.of(context).size.width *
+                                                    0.7) *
+                                                1.1)
+                                            .clamp(5, 600)),
+                                    child: AnimatedOpacity(
+                                      opacity: _opacity,
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      child: const Text(
+                                        "Clouds in Seoul is a singer-songwriter and cofounder of Bareulohsounds.\n\n\nOther than a few years spent in the UK and on a US military base, he has lived in Seoul his whole life and wants to make music based on the observations he makes. He prefers an approach with as few instruments as possible, and hopes his music provides a personal listening experience.\n\n\nHe's helped co-produce a majority of Wuzy's releases, and is currently working on his debut album \"Warmth\".\n\n\nHis biggest musical influences are the Beatles, Trent Reznor, Rachael Yamagata, and the Lumineers.",
+                                        style: TextStyle(
+                                          fontFamily: 'Thonburi',
+                                          fontSize: 15,
+                                          color: Color(0xffFFFFFF),
+                                        ),
                                       ),
                                     ),
                                   ),

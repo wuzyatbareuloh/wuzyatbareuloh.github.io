@@ -37,6 +37,8 @@ dependencies:
   webview_flutter: ^2.0.13
   go_router: ^10.1.2
   audioplayers: ^0.20.1
+  flutter_animate: ^4.2.0+1
+  #youtube_player_flutter: ^8.1.2
   flutter_web_plugins:
     sdk: flutter
   
@@ -97,7 +99,7 @@ flutter:
     - assets/static4.png
     - assets/static5.png
     - assets/static6.png
-    - assets/we1_5xpurple.png
+    - assets/artists1_5x.png
     - assets/cloudsinseoul.png
     - assets/wuzy.png
     - assets/wuzyTempPic.png
@@ -112,6 +114,7 @@ flutter:
     - assets/cloudsInSeoulTempPic.png
     - assets/wuzyPatient.mp3
     - assets/wuzyBloomingLate.mp3
+    - assets/footerLogo.png
     
   #   - images/a_dot_ham.jpeg
 
