@@ -1,0 +1,74 @@
+Clouds in Seoul is a singer-songwriter and cofounder of Bareulohsounds.\n\n\nOther than a few years spent in the UK and on a US military base, he has lived in Seoul his whole life and wants to make music based on the observations he makes. He prefers an approach with as few instruments as possible, and hopes his music provides a personal listening experience.\n\n\nHe's helped co-produce a majority of Wuzy's releases, and is currently working on his debut album "Warmth".\n\n\nHis biggest musical influences are the Beatles, Trent Reznor, Rachael Yamagata, and the Lumineers.
+
+
+
+Other than a few years spent in the UK and on a US military base, he has lived in Seoul his whole life and wants to make music based on the observations he makes. He prefers an approach with as few instruments as possible, and hopes his music provides a personal listening experience. 
+
+He is currently working on his debut album, “Warmth”, and is working with Bareuloh Sounds in developing his sound. 
+
+His biggest musical influences are Rachael Yamagata, Damien Rice, Coldplay, and
+He's helped co-produce a majority of Wuzy's releases, and is currently working on his debut album "Warmth"
+
+
+
+ 
+
+
+
+    1. in folder called “web”, do flutter clean and then flutter build web
+    2. copy pubspec.yaml and paste it into build>web
+    3. copy the lib folder and paste into build>web
+    4. copy the fonts folder in web and paste it in build>web
+    5. copy all contents in web>assets and paste into build>web>assets
+    6. make sure that bareuloh_website_preview.png and favicon.ico is in the same root as index.html
+    7. go to http://favicon.io/favicon-converter/ and get favicon.ico
+        1. update: 08272023 - it’s in assets already
+    8. move favicon.ico to build/web (learned from https://www.youtube.com/watch?v=Rf5bcE18emM btw)
+    9. and under <!-- Favicon --> in the index.html file, replace that with = <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+10. also, copy this at the top
+<meta property="og:title" content="Bareulohsounds.">
+  <meta property="og:description" content="Here, is where you belong">
+  <meta property="og:image" content="bareuloh_website_preview.png">
+  <meta property="og:url" content="http://www.bareulohsounds.com">
+11. replace <title>web</title> with <title>Bareulohsounds. Here, is where you belong.</title>
+12. add this right before <head> ends in index.html
+<script>
+    // This script updates the title based on the current page
+    window.addEventListener('load', function() {
+      var path = window.location.pathname; // Get the current path
+      var pageTitle;
+
+      // Define custom titles for specific pages
+      switch (path) {
+        case '/artists':
+          pageTitle = 'Artists @ Bareulohsounds.';
+          break;
+        case '/wuzy':
+          pageTitle = 'Wuzy';
+          break;
+          
+        // Add more cases for other pages as needed
+        case '/cloudsinseoul':
+          pageTitle = 'Clouds in Seoul';
+          break;
+        case '/patient':
+          pageTitle = 'Wuzy - Patient';
+          break;
+        case '/bloominglate':
+          pageTitle = 'Wuzy - Blooming Late (ft. Sean Park)';
+          break;
+        default:
+          pageTitle = 'Bareulohsounds. Here, is where you belong.'; // Default title
+          break;
+      }
+
+      // Update the document title
+      document.title = pageTitle;
+    });
+  </script>
+
+13. copy and paste index.html and make another file called 404.html
+
