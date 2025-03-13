@@ -15,6 +15,9 @@
   <meta property="og:image" content="https://www.bareulohsounds.com/bareuloh_website_preview.png">
   <meta property="og:url" content="https://www.bareulohsounds.com/">
   <meta property="og:type" content="website">
+
+
+  
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -64,35 +67,20 @@
   ></script>
 
   <script>
-      function updateOGTags() {
-          const path = window.location.pathname;
-          const ogTitle = document.getElementById('ogTitle');
-          const ogDescription = document.getElementById('ogDescription');
-          const ogImage = document.getElementById('ogImage');
-          const ogUrl = document.getElementById('ogUrl');
-
-          switch (path) {
-              case '/notahomewithoutyou':
-                  ogTitle.content = 'Wuzy - not a home without you';
-                  ogDescription.content = 'Wuzy - not a home without you (2025)';
-                  ogImage.content = 'https://www.bareulohsounds.com/assets/cover_art_images/notahomewithoutyou.jpg';
-                  ogUrl.content = 'https://www.bareulohsounds.com/notahomewithoutyou';
-                  break;
-              default:
-                  // Use default tags
-                  break;
-          }
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.location.pathname === "/notahomewithoutyou") {
+        document.querySelector('meta[property="og:title"]').setAttribute("content", "Not A Home Without You - Bareulohsounds");
+        document.querySelector('meta[property="og:description"]').setAttribute("content", "Listen to Not A Home Without You on Bareulohsounds.");
+        document.querySelector('meta[property="og:image"]').setAttribute("content", "https://www.bareulohsounds.com/assets/cover_art_images/notahomewithoutyou.jpg");
+        document.querySelector('meta[property="og:url"]').setAttribute("content", "https://www.bareulohsounds.com/notahomewithoutyou");
       }
-
-      window.addEventListener('load', updateOGTags);
-      window.addEventListener('popstate', updateOGTags); // Update on browser navigation
-    </script>
-
-  
+    });
+  </script>
 </head>
 <body>
   <script>
-      //ensure that the tags update when the flutter app changes the route.
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
@@ -101,9 +89,9 @@
         return engineInitializer.initializeEngine();
       }).then(function(appRunner) {
         return appRunner.runApp();
-      }).then(function(){
-          updateOGTags();
       });
-    </script>
+    });
+  </script>
+
 </body>
 </html>
